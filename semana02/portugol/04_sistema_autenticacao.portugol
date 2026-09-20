@@ -1,0 +1,35 @@
+// Desafio 4 - Sistema de Autenticacao (versao em Portugol)
+
+programa
+{
+	funcao inicio()
+	{
+		cadeia  senha_correta = "python123"
+		cadeia  senha_digitada
+		inteiro numero_tentativas = 0
+		inteiro limite_tentativas = 3
+		inteiro tentativas_restantes
+		logico  acesso_liberado = falso
+
+		enquanto (numero_tentativas < limite_tentativas e acesso_liberado == falso) {
+			escreva("Digite a senha: ")
+			leia(senha_digitada)
+			numero_tentativas <- numero_tentativas + 1
+
+			se (senha_digitada == senha_correta) {
+				acesso_liberado <- verdadeiro
+			} senao {
+				tentativas_restantes <- limite_tentativas - numero_tentativas
+				se (tentativas_restantes > 0) {
+					escreval("Senha incorreta. Tentativas restantes: ", tentativas_restantes)
+				}
+			}
+		}
+
+		se (acesso_liberado) {
+			escreval("Acesso liberado! Senha correta.")
+		} senao {
+			escreval("Acesso bloqueado. Número máximo de tentativas excedido.")
+		}
+	}
+}

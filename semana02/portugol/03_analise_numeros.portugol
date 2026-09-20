@@ -1,0 +1,41 @@
+// Desafio 3 - Analise de Numeros (versao em Portugol)
+
+programa
+{
+	funcao inicio()
+	{
+		inteiro quantidade_numeros = 5
+		inteiro posicao
+		real    numero_digitado
+		real    soma_numeros = 0
+		real    maior_numero
+		real    menor_numero
+		real    media_numeros
+
+		para (posicao = 1; posicao <= quantidade_numeros; posicao++) {
+			escreva("Digite o ", posicao, "º número: ")
+			leia(numero_digitado)
+
+			soma_numeros <- soma_numeros + numero_digitado
+
+			se (posicao == 1) {
+				maior_numero <- numero_digitado
+				menor_numero <- numero_digitado
+			} senao {
+				se (numero_digitado > maior_numero) {
+					maior_numero <- numero_digitado
+				}
+				se (numero_digitado < menor_numero) {
+					menor_numero <- numero_digitado
+				}
+			}
+		}
+
+		media_numeros <- soma_numeros / quantidade_numeros
+
+		escreval("Soma: ", soma_numeros)
+		escreval("Média: ", media_numeros)
+		escreval("Maior valor: ", maior_numero)
+		escreval("Menor valor: ", menor_numero)
+	}
+}

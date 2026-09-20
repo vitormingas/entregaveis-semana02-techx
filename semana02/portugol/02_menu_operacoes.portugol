@@ -1,0 +1,51 @@
+// Desafio 2 - Menu de Operacoes Matematicas (versao em Portugol)
+
+programa
+{
+	funcao inicio()
+	{
+		inteiro opcao_escolhida
+		real    primeiro_numero
+		real    segundo_numero
+		real    resultado
+
+		escreval("===== Menu de Operacoes =====")
+		escreval("1 - Soma")
+		escreval("2 - Subtracao")
+		escreval("3 - Multiplicacao")
+		escreval("4 - Divisao")
+
+		escreva("Escolha uma operacao (1 a 4): ")
+		leia(opcao_escolhida)
+
+		escreva("Digite o primeiro numero: ")
+		leia(primeiro_numero)
+		escreva("Digite o segundo numero: ")
+		leia(segundo_numero)
+
+		escolha (opcao_escolhida) {
+			caso 1:
+				resultado <- primeiro_numero + segundo_numero
+				escreval("Resultado da soma: ", resultado)
+				pare
+			caso 2:
+				resultado <- primeiro_numero - segundo_numero
+				escreval("Resultado da subtracao: ", resultado)
+				pare
+			caso 3:
+				resultado <- primeiro_numero * segundo_numero
+				escreval("Resultado da multiplicacao: ", resultado)
+				pare
+			caso 4:
+				se (segundo_numero == 0) {
+					escreval("Erro: nao e possivel dividir por zero.")
+				} senao {
+					resultado <- primeiro_numero / segundo_numero
+					escreval("Resultado da divisao: ", resultado)
+				}
+				pare
+			outrocaso:
+				escreval("Opcao invalida. Escolha um numero entre 1 e 4.")
+		}
+	}
+}
